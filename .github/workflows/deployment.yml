@@ -9,6 +9,6 @@ jobs:
       - name: Run linters
         uses: wearerequired/lint-action@v2
       - name: Install dependencies
-        run: eslint --ext .jsx --fix src
+        run: "eslint --ext .jsx --fix src"
       - name: Run tests
         run: vite build
