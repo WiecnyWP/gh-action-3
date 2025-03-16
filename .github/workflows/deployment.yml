@@ -12,6 +12,7 @@ jobs:
         run: npm ci
   test:
     runs-on: ubuntu-latest
+    needs: lint
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -23,6 +24,7 @@ jobs:
         run: npm run test
   deploy:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Get code
         uses: actions/checkout@v3
