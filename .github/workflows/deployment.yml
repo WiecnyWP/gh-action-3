@@ -6,10 +6,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
       - name: Install dependencies
         run: eslint --ext .jsx --fix src
       - name: Run tests
